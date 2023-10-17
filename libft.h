@@ -6,7 +6,7 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 12:48:01 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/17 14:50:32 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:43:46 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
 
 char	*ft_strrchr(const char *s, int c);
+
+int		ft_strncmp(const char *s1, const char *s2, size_t);
+
+void	*memchr(const void *s, int c, size_t n);
 
 void	ft_putchar_fd(char c, int fd);
 

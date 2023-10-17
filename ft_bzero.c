@@ -6,7 +6,7 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 14:17:14 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/16 14:26:25 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:30:21 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	ft_bzero(void *s, size_t n)
 	size_t	i;
 	char	*r;
 
-	if (!s)
-		return (NULL);
 	r = s;
 	i = 0;
 	while (i < n)
