@@ -6,7 +6,7 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 12:48:01 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/18 14:11:26 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:55:09 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 int		ft_atoi(const char *nptr);
+
+void	*ft_calloc(size_t nmemb, size_t size);
 
 void	ft_putchar_fd(char c, int fd);
 
