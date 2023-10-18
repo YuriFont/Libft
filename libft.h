@@ -6,7 +6,7 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 12:48:01 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/18 18:52:25 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:16:50 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,9 @@ int		ft_atoi(const char *nptr);
 
 void	*ft_calloc(size_t nmemb, size_t size);
 
-char	*strdup(const char *s);
+char	*ft_strdup(const char *s);
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 void	ft_putchar_fd(char c, int fd);
 
