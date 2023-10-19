@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yufonten <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 15:19:42 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/19 17:05:46 by yufonten         ###   ########.fr       */
+/*   Created: 2023/10/19 15:11:02 by yufonten          #+#    #+#             */
+/*   Updated: 2023/10/19 16:11:54 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+size_t	amontc(char const *s, char c)
 {
-	int			i;
-	const char	*s;
-	char		*d;
+	size_t	i;
+	size_t	amont;
 
-	d = (char *)dest;
-	s = (const char *)src;
-	if (!dest || !src)
-		return (NULL);
-	if (d < s)
+	i = 0;
+	amont = 0;
+	while (s[i] != '\0')
 	{
-		i = 0;
-		while (i < (int)n)
-		{
-			d[i] = s[i];
-			i++;
-		}
+		if (s[i] == c)
+			amont++;
+		i++;
 	}
-	else
-	{
-		i = n - 1;
-		while (i >= 0)
-			*d++ = s[i--];
-	}
-	return (dest);
+	return (amont);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	
 }
