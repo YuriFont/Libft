@@ -6,7 +6,7 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:47:25 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/19 14:58:31 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/10/19 21:43:08 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,21 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	size_t	len_l;
+	size_t	j;
+	size_t	lenl;
 
-	if (!little)
+	if (little[0] == '\0')
 		return ((char *)big);
 	i = 0;
-	len_l = ft_strlen(little);
+	j = 0;
+	lenl = ft_strlen(little);
 	while (big[i] && i < len)
 	{
-		if (big[i] == little[0] && ft_memcmp((char *)
-				(big + i), little, len_l) == 0)
+		while (big[i + j] == little[j] && i + j < len)
+			j++;
+		if (j == lenl)
 			return ((char *)(big + i));
+		j = 0;
 		i++;
 	}
 	return (NULL);
