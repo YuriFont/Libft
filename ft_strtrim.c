@@ -6,62 +6,49 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 10:52:21 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/19 14:34:50 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/10/21 16:48:54 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	final_strlen(char const *s1, char const *set)
+static int	check_char(char c, char const *set)
 {
-	size_t	i;
-	size_t	j;
-	size_t	len_set;
-	size_t	final_len;
+	int	i;
 
 	i = 0;
-	j = 0;
-	len_set = ft_strlen(set);
-	final_len = 0;
-	while (s1[i] != '\0')
+	while (set[i] != '\0')
 	{
-		while (s1[i + j] == set[j] && set[j] && s1[i + j])
-		{
-			j++;
-		}
-		if (j == len_set)
-			final_len -= len_set;
-		j = 0;
+		if (set[i] == c)
+			return (1);
 		i++;
-		final_len++;
 	}
-	return (final_len);
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*r;
+	size_t	start;
+	size_t	end;
 	size_t	i;
-	size_t	j;
-	size_t	k;
+	char	*r;
 
-	i = 0;
-	j = 0;
-	k = 0;
-	r = malloc(sizeof(char) * (final_strlen(s1, set) + 1));
+	start = 0;
+	while (s1[start] != '\0' && check_char(s1[start], set))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && check_char(s1[end - 1], set))
+		end--;
+	r = malloc(sizeof(char) * (end - start + 1));
 	if (!r)
 		return (NULL);
-	while (s1[i] != '\0' && k < final_strlen(s1, set))
+	i = 0;
+	while (start < end)
 	{
-		while (s1[i + j] == set[j] && s1[i + j] && set[j])
-		{
-			j++;
-		}
-		if (j == ft_strlen(set))
-			i += j;
-		r[k++] = s1[i++];
-		j = 0;
+		r[i] = s1[start];
+		i++;
+		start++;
 	}
-	r[k] = '\0';
+	r[i] = '\0';
 	return (r);
 }
