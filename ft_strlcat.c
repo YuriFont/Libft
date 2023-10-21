@@ -6,7 +6,7 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 09:57:01 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/17 14:16:18 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/10/21 16:09:23 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	len_dst;
 	size_t	len_src;
 
-	i = 0;
-	j = ft_strlen(dst);
 	len_dst = ft_strlen(dst);
 	len_src = ft_strlen(src);
+	j = len_dst;
+	i = 0;
 	if (size > 0 && len_dst < size - 1)
 	{
 		while (len_dst + i < size - 1 && src[i] != '\0')
@@ -33,7 +33,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		}
 		dst[j] = '\0';
 	}
-	if (len_src >= size)
-		len_src = size;
+	if (len_dst > size)
+		len_dst = size;
 	return (len_dst + len_src);
 }
