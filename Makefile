@@ -6,7 +6,7 @@
 #    By: yufonten <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 16:16:17 by yufonten          #+#    #+#              #
-#    Updated: 2023/10/19 17:11:31 by yufonten         ###   ########.fr        #
+#    Updated: 2023/10/22 16:24:20 by yufonten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ SRCS =	ft_isalpha.c\
 	ft_strdup.c\
 	ft_substr.c\
 	ft_strjoin.c\
-	ft_strtrim.c
+	ft_strtrim.c\
+	ft_itoa.c
 
 OBJS = $(SRCS:.c=.o)
 
