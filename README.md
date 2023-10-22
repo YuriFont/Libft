@@ -1,7 +1,7 @@
 # Libft
 
 ## Descrição
-O projeto Libft é uma biblioteca em C que contém funções que simulam as funcionalidades da biblioteca `ctype.h`. Ela foi desenvolvida como parte do currículo da escola 42 para fornecer implementações próprias das funções padrão da linguagem C.
+O projeto Libft é uma biblioteca em C que contém funções que simulam as funcionalidades da biblioteca `ctype.h` e algumas outras. Ela foi desenvolvida como parte do currículo da escola 42 para fornecer implementações próprias das funções padrão da linguagem C.
 
 ## Funções Implementadas
 
