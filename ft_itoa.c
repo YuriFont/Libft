@@ -6,13 +6,13 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:29:26 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/22 17:02:36 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/10/23 12:11:50 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_size(int n)
+static int	count_size(int n)
 {
 	int	i;
 	int	sign;
@@ -31,7 +31,7 @@ int	count_size(int n)
 	return (i + sign);
 }
 
-int	ft_abs(int n)
+static int	ft_abs(int n)
 {
 	if (n < 0)
 		return (n * -1);
