@@ -6,7 +6,7 @@
 #    By: yufonten <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 16:16:17 by yufonten          #+#    #+#              #
-#    Updated: 2023/10/22 18:15:39 by yufonten         ###   ########.fr        #
+#    Updated: 2023/10/23 14:41:44 by yufonten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRCS =	ft_isalpha.c\
 	ft_substr.c\
 	ft_strjoin.c\
 	ft_strtrim.c\
+	ft_split.c\
 	ft_itoa.c\
 	ft_strmapi.c\
 	ft_striteri.c\
