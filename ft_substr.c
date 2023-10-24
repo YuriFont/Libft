@@ -6,7 +6,7 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:55:49 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/18 19:14:21 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/10/24 18:05:58 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	j = 0;
+	if ((!len || !start) && !s)
+		return (NULL);
 	r = malloc(sizeof(char) * (len + 1));
 	if (!r)
 		return (NULL);

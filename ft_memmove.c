@@ -6,7 +6,7 @@
 /*   By: yufonten <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:19:42 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/21 16:02:04 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:05:27 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	int			i;
 
-	if (!dest || !src)
+	if (!dest && !src)
 		return (NULL);
 	if (dest <= src)
 	{

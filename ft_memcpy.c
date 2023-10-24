@@ -6,7 +6,7 @@
 /*   By: yufonten <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:35:15 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/19 17:29:09 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:05:07 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char		*d;
 	char		*s;
 
-	if (!dest)
+	if (!dest && !src)
 		return (NULL);
 	i = 0;
 	d = (char *)dest;

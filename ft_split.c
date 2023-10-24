@@ -6,7 +6,7 @@
 /*   By: yufonten <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 15:11:02 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/23 15:40:50 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/10/24 18:20:42 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,16 +89,17 @@ char	**ft_split(char const *s, char c)
 {
 	char	**r;
 	char	set[2];
+	char	*aux;
 
 	if (!s)
 		return (NULL);
 	set[0] = c;
 	set[1] = '\0';
-	s = ft_strtrim(s, set);
-	r = malloc(sizeof(char *) * (amontw(s, c) + 1));
+	aux = ft_strtrim(s, set);
+	r = malloc(sizeof(char *) * (amontw(aux, c) + 1));
 	if (!r)
 		return (NULL);
-	ft_mallsplit(s, r, c);
-	ft_fillsplit(s, r, c);
+	ft_mallsplit(aux, r, c);
+	ft_fillsplit(aux, r, c);
 	return (r);
 }

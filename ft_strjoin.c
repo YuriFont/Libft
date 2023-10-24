@@ -6,11 +6,24 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:18:23 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/18 20:09:46 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/10/24 17:05:42 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static size_t	aconts1(char *r, char const*s1)
+{
+	size_t	j;
+
+	j = 0;
+	while (s1[j] != '\0')
+	{
+		r[j] = s1[j];
+		j++;
+	}
+	return (j);
+}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -18,17 +31,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t		j;
 	char		*r;
 
-	i = 0;
-	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
 	r = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!r)
 		return (NULL);
-	while (s1[i] != '\0')
-	{
-		r[j] = s1[i];
-		i++;
-		j++;
-	}
+	j = aconts1(r, s1);
 	i = 0;
 	while (s2[i] != '\0')
 	{

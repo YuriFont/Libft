@@ -6,7 +6,7 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 10:52:21 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/21 16:48:54 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/10/24 17:15:09 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,23 @@ static int	check_char(char c, char const *set)
 	return (0);
 }
 
+static size_t	len_start(char const *s1, char const *set)
+{
+	size_t	start;
+
+	start = 0;
+	while (s1[start] != '\0' && check_char(s1[start], set))
+		start++;
+	return (start);
+}
+
+static size_t	len_end(size_t e, size_t s, char const *s1, char const *set)
+{
+	while (e > s && check_char(s1[e - 1], set))
+		e--;
+	return (e);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
@@ -33,12 +50,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	char	*r;
 
-	start = 0;
-	while (s1[start] != '\0' && check_char(s1[start], set))
-		start++;
-	end = ft_strlen(s1);
-	while (end > start && check_char(s1[end - 1], set))
-		end--;
+	if (!s1 || !set)
+		return (NULL);
+	start = len_start(s1, set);
+	end = len_end(ft_strlen(s1), start, s1, set);
 	r = malloc(sizeof(char) * (end - start + 1));
 	if (!r)
 		return (NULL);

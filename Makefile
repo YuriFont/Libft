@@ -6,7 +6,7 @@
 #    By: yufonten <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 16:16:17 by yufonten          #+#    #+#              #
-#    Updated: 2023/10/23 14:41:44 by yufonten         ###   ########.fr        #
+#    Updated: 2023/10/24 17:38:59 by yufonten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,25 +45,29 @@ SRCS =	ft_isalpha.c\
 	ft_putendl_fd.c\
 	ft_putnbr_fd.c
 
-OBJS = $(SRCS:.c=.o)
+OBJ = $(SRCS:.c=.o)
 
 CC = gcc
 
 RM = rm -f
 
-CFLAGS = -Wall -Wextra -Werror -c
+CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
 
 all:	$(NAME)
 
-$(OBJS): $(SRCS)
-	$(CC) $(CFLAGS) $(SRCS)
+$(OBJ): $(SRCS)
+	$(CC) $(CFLAGS) -c $(SRCS)
 
-$(NAME): $(OBJS)
-		ar rcs $(NAME) $(OBJS)
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
+
+$(NAME): $(OBJ)
+		ar rcs $(NAME) $(OBJ)
 clean:
-		$(RM) $(OBJS)
+		$(RM) $(OBJ)
 fclean: clean
 		$(RM) $(NAME)
 re: fclean all
