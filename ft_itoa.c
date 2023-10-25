@@ -6,7 +6,7 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:29:26 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/24 17:47:55 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/10/25 11:48:42 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ char	*ft_itoa(int n)
 		}
 		i--;
 	}
-	r[count_size(n) + 1] = '\0';
+	r[count_size(n)] = '\0';
 	return (r);
 }
