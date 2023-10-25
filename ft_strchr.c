@@ -6,9 +6,11 @@
 /*   By: yufonten <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:49:51 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/24 14:24:24 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/10/25 11:59:37 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
