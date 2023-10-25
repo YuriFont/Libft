@@ -6,7 +6,7 @@
 #    By: yufonten <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 16:16:17 by yufonten          #+#    #+#              #
-#    Updated: 2023/10/24 17:38:59 by yufonten         ###   ########.fr        #
+#    Updated: 2023/10/25 15:08:28 by yufonten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,19 @@ SRCS =	ft_isalpha.c\
 	ft_putendl_fd.c\
 	ft_putnbr_fd.c
 
-OBJ = $(SRCS:.c=.o)
+OBJS = $(SRCS:.c=.o)
+
+BONUS = ft_lstnew.c\
+	ft_lstadd_front.c\
+	ft_lstsize.c\
+	ft_lstlast.c\
+	ft_lstadd_back.c\
+	ft_lstdelone.c\
+	ft_lstclear.c\
+	ft_lstiter.c\
+	ft_lstmap.c
+
+BONUS_OBJS = $(BONUS:.c=.o)
 
 CC = gcc
 
@@ -61,13 +73,16 @@ $(OBJ): $(SRCS)
 	$(CC) $(CFLAGS) -c $(SRCS)
 
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS_OBJS)
 
-$(NAME): $(OBJ)
-		ar rcs $(NAME) $(OBJ)
+$(NAME): $(OBJS)
+		ar rcs $(NAME) $(OBJS)
 clean:
-		$(RM) $(OBJ)
+		$(RM) $(OBJS) $(BONUS_OBJS)
 fclean: clean
 		$(RM) $(NAME)
 re: fclean all
+
+bonus: $(OBJS) $(BONUS_OBJS)
+		ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)

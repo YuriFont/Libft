@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 18:55:49 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/25 15:22:37 by yufonten         ###   ########.fr       */
+/*   Created: 2023/10/25 15:08:38 by yufonten          #+#    #+#             */
+/*   Updated: 2023/10/25 16:12:07 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned int	i;
-	size_t			j;
-	char			*r;
+	t_list	*first;
+	t_list	*new;
 
-	i = 0;
-	j = 0;
-	if (!len || !s)
+	if (!f || !del)
 		return (NULL);
-	r = malloc(sizeof(char) * (len + 1));
-	if (!r)
-		return (NULL);
-	while (s[i] != '\0')
+	first = NULL;
+	while (lst != NULL)
 	{
-		if (i >= start && j < len)
+		new = ft_lstnew((*f)(lst->content));
+		if (!new)
 		{
-			r[j] = s[i];
-			j++;
+			while (first != NULL)
+			{
+				new = first->next;
+				del(first->content);
+				free(first);
+				first = new;
+			}
+			lst = NULL;
+			return (NULL);
 		}
-		i++;
+		ft_lstadd_back(&first, new);
+		lst = lst->next;
 	}
-	r[j] = '\0';
-	return (r);
+	return (first);
 }
