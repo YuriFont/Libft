@@ -6,7 +6,7 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 09:57:01 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/24 16:49:39 by yufonten         ###   ########.fr       */
+/*   Updated: 2023/10/27 11:41:21 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	len_dst;
 	size_t	len_src;
 
-	if (!size)
-		return (0);
 	len_dst = ft_strlen(dst);
 	len_src = ft_strlen(src);
 	j = len_dst;
@@ -39,3 +37,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		len_dst = size;
 	return (len_dst + len_src);
 }
+
+
