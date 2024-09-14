@@ -6,7 +6,7 @@
 /*   By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 12:48:01 by yufonten          #+#    #+#             */
-/*   Updated: 2023/10/25 16:12:41 by yufonten         ###   ########.fr       */
+/*   Updated: 2024/09/14 11:15:24 by yufonten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,27 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
 typedef struct s_list
 {
-	void			*content;
+	char			*buf;
 	struct s_list	*next;
 }	t_list;
+
+int		found_newline(t_list *list);
+
+t_list	*find_last_node(t_list *list);
+
+int		len_to_newline(t_list *list);
+
+void	copy_str_list(t_list *list, char *str);
+
+void	clear_list(t_list **list, t_list *clean_node, char *buf);
+
+char	*get_next_line(int fd);
 
 int		ft_isalpha(int c);
 
@@ -89,23 +105,5 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 
 void	ft_putnbr_fd(int n, int fd);
-
-t_list	*ft_lstnew(void *content);
-
-void	ft_lstadd_front(t_list **lst, t_list *new);
-
-int		ft_lstsize(t_list *lst);
-
-t_list	*ft_lstlast(t_list *lst);
-
-void	ft_lstadd_back(t_list **lst, t_list *new);
-
-void	ft_lstdelone(t_list *lst, void (*d)(void *));
-
-void	ft_lstclear(t_list **lst, void (*del)(void *));
-
-void	ft_lstiter(t_list *lst, void (*f)(void *));
-
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
