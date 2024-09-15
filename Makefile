@@ -6,7 +6,7 @@
 #    By: yufonten <yufonten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 16:16:17 by yufonten          #+#    #+#              #
-#    Updated: 2024/09/14 12:56:42 by yufonten         ###   ########.fr        #
+#    Updated: 2024/09/15 10:26:41 by yufonten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ SRCS =	ft_isalpha.c\
 	get_next_line.c\
 	get_next_line_utils.c\
 	ft_fprint_unsint.c\
-	ft_fprinchar.c\
+	ft_fprintchar.c\
 	ft_fprintf.c\
 	ft_fprinthex.c\
 	ft_fprintnbr.c\
